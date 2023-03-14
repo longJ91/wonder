@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '../example_candidate_model.dart';
+import '../models/word_card.dart';
 
 class ExampleCard extends StatelessWidget {
-  final ExampleCandidateModel candidate;
+  // final ExampleCandidateModel candidate;
+  final WordCard card;
 
   const ExampleCard(
-    this.candidate, {
+    this.card, {
     super.key,
   });
 
@@ -30,25 +30,13 @@ class ExampleCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Flexible(
-          //   child: Container(
-          //     decoration: BoxDecoration(
-          //       gradient: LinearGradient(
-          //         begin: Alignment.topCenter,
-          //         end: Alignment.bottomCenter,
-          //         colors: candidate.color,
-          //       ),
-          //     ),
-          //   ),
-          // ),
           Padding(
             padding: const EdgeInsets.all(30),
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 40),
                 Text(
-                  candidate.name,
+                  card.word,
                   style: const TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -57,7 +45,7 @@ class ExampleCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 80),
                 Text(
-                  candidate.job,
+                  card.description,
                   style: const TextStyle(
                     color: Colors.grey,
                     fontSize: 17,
