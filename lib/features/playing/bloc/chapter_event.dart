@@ -40,3 +40,19 @@ class FailCardEvent extends ChapterEvent {
         cardId,
       ];
 }
+
+class FinishEvent extends ChapterEvent {
+  // final int totlaCards;
+  // final int totalPassCards;
+
+  // FinishEvent({
+  //   required this.totlaCards,
+  //   required this.totalPassCards,
+  // });
+
+  @override
+  List<Object?> get props => [
+        // totlaCards,
+        // totalPassCards,
+      ];
+}

@@ -113,14 +113,30 @@ class DiagleTest extends StatelessWidget {
               size: 150,
             ),
             const Text(
-              "This is a Custom Dialog",
+              "잘했습니다!",
               style: TextStyle(fontSize: 20),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text("Close"))
+            const Text(
+              "아주 훌룡하네요.\n많은 문제를 맞췄습니다.\n다음 문제로 넘어가도 좋습니다.",
+              style: TextStyle(fontSize: 20),
+            ),
+            Container(
+              alignment: Alignment.center,
+              child: Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text("다시하기")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text("다음단계로"))
+                ],
+              ),
+            )
           ],
         ),
       ),

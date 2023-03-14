@@ -15,6 +15,7 @@ class ChapterBloc extends Bloc<ChapterEvent, ChapterState> {
     on<ChapterFetched>(_onChapterFetched);
     on<PassCardEvent>(_onPassCardEvent);
     on<FailCardEvent>(_onFailCardEvent);
+    on<FinishEvent>(_onFinishEvent);
   }
 
   Future<void> _onChapterFetched(
@@ -54,5 +55,12 @@ class ChapterBloc extends Bloc<ChapterEvent, ChapterState> {
     } catch (_) {
       emit(state.copyWith(status: ChapterStatus.error));
     }
+  }
+
+  Future<void> _onFinishEvent(
+      FinishEvent event, Emitter<ChapterState> emit) async {
+    return emit(state.copyWith(
+      status: ChapterStatus.finish,
+    ));
   }
 }
